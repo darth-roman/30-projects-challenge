@@ -1,0 +1,459 @@
+@use "utils";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+
+*{
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    --contentFont: "Inter";
+    --headlineFont: "Manrope"
+}
+
+
+:root[data-theme="light"]{
+    color-scheme: light;
+
+    /* Surface Colors */
+    --surface: hsl(225, 100%, 98%);
+    --surface-dim: hsl(213, 62%, 87%);
+    --surface-bright: hsl(225, 100%, 98%);
+    --surface-container-lowest: hsl(0, 0%, 100%);
+    --surface-container-low: hsl(216, 100%, 96%);
+    --surface-container: hsl(216, 100%, 94%);
+    --surface-container-high: hsl(216, 100%, 92%);
+    --surface-container-highest: hsl(216, 100%, 90%);
+
+    /* Brand & Accents */
+    --primary: hsl(130, 23%, 40%);
+    --on-primary: hsl(0, 0%, 100%);
+    --primary-container: hsl(130, 30%, 85%);
+    --on-primary-container: hsl(130, 40%, 15%);
+
+    --secondary: hsl(15, 90%, 75%); /* Muted Terracotta */
+    --on-secondary: hsl(15, 100%, 15%);
+
+    --tertiary: hsl(247, 95%, 80%); /* Soft Lavender */
+    --on-tertiary: hsl(247, 50%, 20%);
+
+    --quaternary: hsl(45, 50%, 95%); /* Warm Sand */
+    --on-quaternary: hsl(45, 40%, 15%);
+
+    /* Neutral/Text */
+    --on-surface: hsl(225, 30%, 10%);
+    --on-surface-variant: hsl(225, 10%, 40%);
+    --outline: hsl(225, 10%, 60%);
+    --outline-variant: hsl(225, 10%, 85%);
+}
+
+:root {
+    color-scheme: dark;
+    /* Surface Colors */
+    --surface: hsl(210, 10%, 8%);
+    --surface-dim: hsl(210, 10%, 8%);
+    --surface-bright: hsl(210, 4%, 23%);
+    --surface-container-lowest: hsl(210, 17%, 5%);
+    --surface-container-low: hsl(210, 8%, 11%);
+    --surface-container: hsl(210, 8%, 14%);
+    --surface-container-high: hsl(210, 8%, 17%);
+    --surface-container-highest: hsl(210, 8%, 20%);
+
+    /* Brand & Accents */
+    --primary: hsl(127, 21%, 61%);
+    --on-primary: hsl(127, 25%, 10%);
+    --primary-container: hsl(127, 15%, 25%);
+    --on-primary-container: hsl(127, 30%, 85%);
+
+    --secondary: hsl(15, 60%, 64%); /* Muted Terracotta */
+    --on-secondary: hsl(15, 70%, 10%);
+
+    --tertiary: hsl(247, 95%, 80%); /* Soft Lavender */
+    --on-tertiary: hsl(247, 40%, 15%);
+
+    --quaternary: hsl(45, 40%, 94%); /* Warm Sand */
+    --on-quaternary: hsl(45, 20%, 15%);
+
+    /* Neutral/Text */
+    --on-surface: hsl(210, 5%, 90%);
+    --on-surface-variant: hsl(210, 5%, 70%);
+    --outline: hsl(210, 5%, 40%);
+    --outline-variant: hsl(210, 5%, 25%);
+}
+
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+     
+    font-family: var(--contentFont);
+
+    background-color: var(--surface);
+    color: var(--on-surface);
+
+    @include utils.generateFlex(column, start, start);
+}
+
+header{
+    width: 100%;
+    padding: 1rem;
+    
+    background-color: var(--surface-bright);
+    color: var(--primary);
+    #logo{
+        @include utils.generateFlex(row, center, center);
+    }
+}
+
+main{
+    width: 100%;
+    @include utils.generateFlex(column, flex-start, center, 2rem);
+
+    padding: 1.5rem;
+
+    line-height: 1.6rem;
+
+    a{
+        transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover{
+            text-decoration: underline wavy;
+        }
+    }
+
+    .circle{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 100%;
+        position: absolute;
+        z-index: -99;
+    }
+
+    .square{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 1rem;
+        position: absolute;
+        z-index: -99;
+
+
+    }
+    
+    .green-circle{
+        background-color: var(--primary);
+        top: 7rem;
+        left: 5rem;
+    }
+
+    .red-square{
+        background-color: var(--secondary);
+        top: 15rem;
+        right: 5rem;
+    }
+    #welcome{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        padding: 1.5rem 2rem;
+
+        // Glassmorphism
+        background: rgba(from var(--primary-container) r g b / 0.7);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(11.2px);
+        -webkit-backdrop-filter: blur(11.2px);
+        border: 1px solid var(--on-surface);
+
+        a{
+            color: var(--tertiary);
+
+            &:hover{
+                color: var(--on-primary-container);
+            }
+        }
+    }
+    
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+    #subjects{
+        @include utils.generateFlex(column, flex-start, start, 1rem);
+        .subject{
+            @include utils.generateFlex(column, start, space-between, 1rem);
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+            .subject-head{
+                width: 100%;
+                @include utils.generateFlex(row, center, space-between, 0.4rem);
+                .icon{
+                    @include utils.generateFlex(row, center, start, 0.4rem);
+                    span{
+                        padding: 0.4rem;
+                        color: var(--on-primary-container);
+                        background: rgba(from var(--primary-container) r g b / 0.9);
+                        border-radius: 1rem;
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .coeff{
+                    padding: 0.4rem;
+                    background: rgba(from var(--primary) r g b / 0.2);
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+
+    #qcms{
+        width: 100%;
+        @include utils.generateFlex(column, start, start, 1rem);
+
+        .qcm{
+            width: 100%;
+            @include utils.generateFlex(column, start, space-between, 1rem);
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+
+            .qcm-head{
+                @include utils.generateFlex(row, start, start, 0.4rem);
+                width: 100%;
+                .cover {
+                    color: var(--on-primary-container);
+                    background: rgba(from var(--primary-container) r g b / 0.9);
+                    border-radius: 1rem;
+
+                    span{
+                        padding: 1rem;
+                        font-size: 2rem;
+                    }
+                }
+
+                .deets {
+                    @include utils.generateFlex(column, center, center);
+                    p{
+                        @include utils.generateFlex(row, center, center);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.2rem;
+                    }
+                }
+            }
+
+            .qcm-link {
+                text-align: center;
+                width: 100%;
+                background: rgba(from var(--primary-container) r g b / 0.9);
+                border-radius: 1rem;
+                padding: 1rem;
+                a{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #td-tp{
+        width: 100%;
+        @include utils.generateFlex(column, start, start, 1rem);
+
+
+        .info-sect{
+            width: 100%;
+            @include utils.generateFlex(column, start, space-between, 1.5rem);
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+
+            .sect-head{
+                @include utils.generateFlex(row, center, flex-start);
+            }
+        }
+    }
+
+    #section-nav{
+        width: 100%;
+        @include utils.generateFlex(row, center, center, 1rem);
+
+        a{
+            text-decoration: none;
+        }
+        .nav-item{
+            @include utils.generateFlex(row, center, start, 0.3rem);
+
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+
+            padding: 0.6rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--outline);
+
+            &:hover{
+                background: rgba(from var(--surface) r g b / 0.4);
+            }
+
+        }
+    }
+
+    #drives{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        .drive-link{
+            @include utils.generateFlex(column, center, start, 1rem);
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--outline);
+            .drive-icon{
+                background: rgba(from var(--primary) r g b / 0.4);
+
+                color: hsl(from var(--on-surface) h s l);
+                border-radius: 100%;
+                span{
+                    padding: 1rem;
+                    font-size: 2rem;
+                }
+            }
+
+            .drive-deets{
+                @include utils.generateFlex(column, center, start);
+                a{
+                    text-decoration: none;
+                    font-size: 1.35rem;
+
+                    &:hover{
+                        color: var(--on-surface-variant);
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+    #yt-channels{
+        @include utils.generateFlex(column, center, start, 1rem);
+        .channel{
+            // padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+
+            .channel-image{
+            border-radius: 1rem;
+
+                background: linear-gradient(360deg, var(--surface), #ffffff11);
+                img{
+                    position: relative;
+                    z-index: -1;
+                    border-radius: 1rem;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .channel-deets{
+                h3{
+                    font-size: 1.5rem;
+                }
+                padding: 1rem;
+                @include utils.generateFlex(column, start, start, 1rem);
+            }
+
+        }
+    }
+
+    #ai-tools{
+        width: 100%;
+        @include utils.generateFlex(column, start, start, 1rem);
+
+        .ai-tool{
+            width: 100%;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+            @include utils.generateFlex(row, center, start, 1rem);
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+    }
+
+    #influencers{
+        width: 100%;
+        @include utils.generateFlex(column, start, start, 1rem);
+        .influencer{
+            width: 100%;
+            background: rgba(from var(--outline-variant) r g b / 0.4);
+            @include utils.generateFlex(row, center, start, 1rem);
+            border-radius: 1rem;
+            padding: 1rem;
+
+            .deets{
+                @include utils.generateFlex(column, flex-start, start, 1rem);
+            }
+
+            a{
+                font-size: 1.6rem;
+            }
+            .image{
+                width: 5rem;
+                img{
+                    width: 100%;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+footer{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    
+    @include utils.generateFlex(row, center, center);
+
+    background-color: var(--surface-container);
+
+
+    padding: 1rem;
+
+    margin-top: 3rem;
+
+    a{
+        color: var(--on-surface);
+
+        &:hover{
+            color: var(--on-surface-variant);
+        }
+    }
+
+    nav{
+        width: 100%;
+        @include utils.generateFlex(row, center, space-around, 1rem);
+
+        .nav-item {
+            @include utils.generateFlex(column, center, center, 1rem);
+            border-radius: 2rem;
+            a{
+                @include utils.generateFlex(column, center, center, 0.5rem);
+                span{
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        
+        .nav-item.active{
+            color: var(--on-primary-container);
+            background: rgba(from var(--primary-container) r g b / 0.9);
+            padding: 1rem;
+        }
+    }
+}

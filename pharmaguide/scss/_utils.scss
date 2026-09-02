@@ -1,0 +1,8 @@
+// mixins
+@mixin generateFlex($direction: row, $align, $justify, $gap: 0.1rem){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
