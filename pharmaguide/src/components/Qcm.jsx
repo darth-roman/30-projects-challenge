@@ -1,20 +1,22 @@
 export function Qcm({ qcmName, rating, qcmUrl }){
     return(
-        <div class="qcm">
-            <div class="qcm-head">
-                <div class="cover">
-                    <span class="material-icons">book</span>
+        <div className="qcm">
+            <div className="qcm-head">
+                <div className="cover">
+                    <span className="material-icons">book</span>
                 </div>
-                <div class="deets">
-                    <h3 class="title">{qcmName}</h3>
+                <div className="deets">
+                    <h3 className="title">
+                        <a href={qcmUrl} target="_blank">{qcmName}</a>
+                    </h3>
                     <p>
-                        <span class="material-icons">star</span>
+                        <span className="material-icons">star</span>
                         {rating}/5
                     </p>
                 </div>
             </div>
-            <div class="qcm-link">
-                <a href={qcmUrl}>Visit Page</a>
+            <div className="qcm-link">
+                <a href={qcmUrl} target="_blank">Visit Page</a>
             </div>
         </div>
     )

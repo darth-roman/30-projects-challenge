@@ -21,9 +21,9 @@ export function Navbar(){
                     <span className="material-icons">inventory</span>Resources
                 </Link>
             </div>
-            <div className={`nav-item ${location === "/advices" ? "active" : ""}`}>
-                <Link href="/advices">
-                    <span className="material-icons">lightbulb</span>Advices
+            <div className={`nav-item ${location === "/advice" ? "active" : ""}`}>
+                <Link href="/advice">
+                    <span className="material-icons">lightbulb</span>Advice
                 </Link>
             </div>
         </nav>

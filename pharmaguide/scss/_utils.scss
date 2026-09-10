@@ -6,3 +6,16 @@
     justify-content: $justify;
     gap: $gap;
 }
+
+@mixin generateGrid(
+    $cols: 2,
+    $align,
+    $justify,
+    $gap: 0.1rem){
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    // grid-template-rows: repeat($rows, 1fr);
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}

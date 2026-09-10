@@ -1,10 +1,10 @@
 export function Drive({driveName, driveUrl, year}){
     return(
-        <div class="drive-link">
-            <div class="drive-icon">
-                <span class="material-icons">school</span>
+        <div className="drive-link">
+            <div className="drive-icon">
+                <span className="material-icons">school</span>
             </div>
-            <div class="drive-deets">
+            <div className="drive-deets">
                 <a href={driveUrl}>{driveName}</a>
                 <p>({year})</p>
             </div>

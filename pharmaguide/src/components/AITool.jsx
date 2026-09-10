@@ -1,4 +1,4 @@
-export function AITool({title, toolUrl}){
+export function AITool({title, toolUrl, subjects}){
 
     return(
         <div className="ai-tool">
@@ -10,6 +10,7 @@ export function AITool({title, toolUrl}){
             <div className="ai-link">
                 <div className="deets">
                     <h3 className="title">{title}</h3>
+                    <small>{subjects}</small>
                 </div>
                 <a href={toolUrl} target="_blank">Visit Page</a>
             </div>

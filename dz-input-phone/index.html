@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Phone Number</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="module" defer></script>
+</head>
+<body>
+
+    <phone-number></phone-number>
+
+    <!-- <flag-icon country="dz"></flag-icon> -->
+
+    <!-- <button>Change Flag</button> -->
+
+    <template id="phone-field">
+        <style>
+            .field{
+                display: flex;
+                flex-direction: column;
+
+                input:focus{
+                    outline: 0;
+                    border: 2px solid hsl(0, 0%, 27%);
+                }
+            }
+        </style>
+        <div class="field">
+            <label for="phone-number">Phone Number</label>
+            <input type="text" id="phone-number">
+            <small></small>
+        </div>
+    </template>
+
+
+</body>
+</html>
