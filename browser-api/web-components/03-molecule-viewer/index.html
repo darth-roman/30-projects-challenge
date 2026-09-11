@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecule Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- <script src="https://3Dmol.org/build/3Dmol-min.js"></script> -->
+     <!-- <div style="width: 400px; height: 400px;" 
+        class='viewer_3Dmoljs' data-pdb='4N8T' data-style='cartoon:color=spectrum'
+        data-surface='opacity:.7;color:white'></div> -->
+
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+
+    <div id="grid">
+        <molecule-viewer pdb-id="3PBL"></molecule-viewer>
+        <div id="control-panel">
+            <div class="field">
+                <input type="text" name="cif" id="cif">
+                <button type="button">View Molecule</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
