@@ -1,0 +1,21 @@
+{
+  "name": "SMILES Drawer",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["smiles-drawer.min.js", "popup.js"],
+      "css": ["style.css"],
+      "all_frames": true
+    }
+  ]
+}
