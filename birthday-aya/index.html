@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Happy 24th Birthday! – A Cozy Pixel Adventure</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="stage"><canvas id="game" aria-label="Retro pixel-art platformer game"></canvas></div>
+
+<div id="touch" aria-hidden="true">
+  <div class="pad">
+    <button data-k="left">&#9664;</button>
+    <button data-k="right">&#9654;</button>
+  </div>
+  <button data-k="jump" class="jump">JUMP</button>
+</div>
+
+<div id="win" hidden role="dialog" aria-labelledby="winTitle">
+  <div class="card">
+    <h1 id="winTitle">HAPPY 24TH BIRTHDAY!</h1>
+    <p class="level">&#9733; LEVEL 24 UNLOCKED &#9733;</p>
+    <div class="icons" id="winIcons"></div>
+    <p>You gathered all <b>24</b> treasures&mdash;forget-me-nots, yarn balls and cozy socks&mdash;and made it to the pharmacy! Future pharmacist, knitter and flower lover: this year is yours.</p>
+    <div class="letter">
+      <h2>&#9993; a message to you, adventurer</h2>
+      <div id="msg"></div>
+      <p class="sig" id="sig"></p>
+    </div>
+    <button class="btn" id="again">Play again</button>
+  </div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
